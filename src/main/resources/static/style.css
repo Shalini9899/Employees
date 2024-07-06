@@ -1,0 +1,29 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.table thead {
+    background-color: #e9ecef;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.btn {
+    margin-right: 5px;
+}

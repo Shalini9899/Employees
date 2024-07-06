@@ -1,0 +1,101 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Add New Employee</title>-->
+<!--    <link rel="stylesheet" type="text/css" href="../static/style.css">-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h2 class="mt-4" th:text="${isUpdate} ? 'Update Employee' : 'Add New Employee'"></h2>-->
+<!--    <form th:action="${isUpdate} ? @{/employees/edit/{id}(id=${employee.id})} : @{/employees/new}" th:object="${employee}" method="post">-->
+
+<!--        <div class="form-group">-->
+<!--            <label for="firstName">First Name:</label>-->
+<!--            <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="Enter first name">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="lastName">Last Name:</label>-->
+<!--            <input type="text" class="form-control" id="lastName" th:field="*{lastName}" placeholder="Enter last name">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="email">Email:</label>-->
+<!--            <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Enter email">-->
+<!--        </div>-->
+<!--        <button type="submit" class="btn btn-primary" th:text="${isUpdate} ? 'Update Employee' : 'Add Employee'"></button>-->
+<!--        <a href="/employees" class="btn btn-secondary">Back</a>-->
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${isUpdate} ? 'Update Employee' : 'Add New Employee'"></title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .form-wrapper {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: #ffffff;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        .btn-back {
+            background-color: #6c757d;
+            color: #ffffff;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn-back:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-wrapper">
+        <h2 class="form-title" th:text="${isUpdate} ? 'Update Employee' : 'Add New Employee'"></h2>
+        <form th:action="${isUpdate} ? @{/employees/edit/{id}(id=${employee.id})} : @{/employees/new}" th:object="${employee}" method="post">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="Enter first name">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" th:field="*{lastName}" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn btn-submit" th:text="${isUpdate} ? 'Update Employee' : 'Add Employee'"></button>
+            <a href="/employees" class="btn btn-back">Back</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

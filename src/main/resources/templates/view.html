@@ -1,0 +1,103 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>User Management App</title>-->
+<!--    <link rel="stylesheet" type="text/css" href="/static/style.css">-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+
+<!--&lt;!&ndash;/css/styles.css"&ndash;&gt;-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h2 class="text-center">View User</h2>-->
+<!--    <div class="form-group">-->
+<!--        <label>id</label>-->
+<!--        <p th:text="${employee.id}"></p>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label>First Name:</label>-->
+<!--        <p th:text="${employee.firstName}"></p>-->
+<!--    </div>-->
+
+
+<!--    <div class="form-group">-->
+<!--        <label>Last Name:</label>-->
+<!--        <p th:text="${employee.lastName}"></p>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label>Email:</label>-->
+<!--        <p th:text="${employee.email}"></p>-->
+<!--    </div>-->
+<!--    <a href="/employees" class="btn btn-secondary">Back</a>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View User</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .view-wrapper {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .view-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group p {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .btn-back {
+            background-color: #6c757d;
+            color: #ffffff;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .btn-back:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="view-wrapper">
+        <h2 class="view-title">View User</h2>
+        <div class="form-group">
+            <label>ID:</label>
+            <p th:text="${employee.id}">1</p>
+        </div>
+        <div class="form-group">
+            <label>First Name:</label>
+            <p th:text="${employee.firstName}">John</p>
+        </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <p th:text="${employee.lastName}">Doe</p>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <p th:text="${employee.email}">john.doe@example.com</p>
+        </div>
+        <a href="/employees" class="btn btn-back">Back</a>
+    </div>
+</div>
+</body>
+</html>
